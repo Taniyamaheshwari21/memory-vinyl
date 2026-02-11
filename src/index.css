@@ -1,0 +1,106 @@
+@import 'tailwindcss';
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #1a1a1a;
+  background-color: #fafafa;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Minimal volume slider - light theme */
+input.memory-vinyl-volume {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #e5e0db;
+  border-radius: 9999px;
+}
+input.memory-vinyl-volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+input.memory-vinyl-volume::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+
+/* Ananias font for HINT – add .woff2/.woff to public/fonts/ if you have the font */
+@font-face {
+  font-family: 'Ananias';
+  src: url('/fonts/Ananias.woff2') format('woff2'), url('/fonts/Ananias.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Hero section – 16:9-style ratios, text #644619 */
+.hero-section .hero-title,
+.hero-section .hero-title-scaled {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+  color: #644619;
+  font-size: clamp(1.75rem, 4.5vw + 1rem, 3rem);
+  text-shadow: 0 4px 20px rgba(100, 70, 25, 0.15), 0 2px 8px rgba(0, 0, 0, 0.08);
+  filter: drop-shadow(0 6px 24px rgba(0, 0, 0, 0.06));
+}
+.hero-section .hero-subtitle,
+.hero-section .hero-subtitle-scaled {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 500;
+  color: #644619;
+  font-size: clamp(1rem, 2vw + 0.5rem, 1.35rem);
+  text-shadow: 0 4px 16px rgba(100, 70, 25, 0.12), 0 2px 6px rgba(0, 0, 0, 0.06);
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.05));
+}
+.hero-section .hint-btn {
+  font-family: 'Ananias', 'Dancing Script', cursive, sans-serif;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.08);
+  filter: drop-shadow(0 6px 24px rgba(0, 0, 0, 0.1));
+}
+.hero-section .hero-hint-tooltip {
+  text-shadow: 0 2px 12px rgba(100, 70, 25, 0.1);
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.06));
+}
+
+/* Hint modal – floating pop-up with blurred shadow */
+.hint-modal {
+  filter: drop-shadow(0 16px 48px rgba(0, 0, 0, 0.18));
+}
+/* Album cover button – no visible box around images */
+.hero-section .album-cover-wrap {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+/* Album cover image (sleeve.png) – 1:1 aspect */
+.album-cover-img {
+  display: block;
+}
